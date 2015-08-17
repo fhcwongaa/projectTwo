@@ -16,3 +16,4 @@ $("#close-modal").click(function(){
 	$("#modal").toggle();
 })
 
+

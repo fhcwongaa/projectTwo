@@ -91,9 +91,7 @@ app.get('/app/topics/:id/threads/:idd',ensureAuthenticated,function(req,res){
 		if(err){
 			console.log(err);
 		}else{
-			db.all('SELECT comments.sqltime, comments.thread_id, comments.id,comments.content,comments.location, threads.name, threads.votes, threads.topic_id from comments,threads WHERE comments.thread_id = threads.id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
-				
-
+			db.all('SELECT comments.sqltime, comments.thread_id, comments.id,comments.content,comments.location, comments.user_id, threads.name AS threadsname, threads.votes, threads.topic_id, users.id,users.name,users.image from comments,threads,users WHERE comments.thread_id = threads.id AND users.id = comments.user_id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
 				data = rows2; 
 				data.facename = req.user.name;
 				data.image = req.user.image;
@@ -130,6 +128,7 @@ app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 	 			db.all("SELECT * FROM comments WHERE comments.thread_id = ?", parseInt(req.body.id), function(err,rows){
 
 	 				console.log(rows.length);
+	 				console.log(rows);
 	 				//update number of comments
 			 		db.run('UPDATE threads SET comments = ? WHERE threads.id = ?' , rows.length , parseInt(req.body.id), function(err,rows){
 						if(err){
@@ -161,7 +160,7 @@ app.put('/app/topics/:id/threads/:idd',ensureAuthenticated,function(req,res){
 				console.log(rows);
 			}
 		});
-		res.redirect('/app/topics/' + req.params.id + '/threads/'+ req.params.idd);
+		
 })
 
 //CREATE NEW THREAD

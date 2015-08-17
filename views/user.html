@@ -27,18 +27,19 @@
 			<div class="pure-u-lg-21-24 pure-u-md-16-24 pure-u-sm-1 pure-u-1">
 				<div class="pure-menu pure-menu-horizontal" >
 					<div class= "navbar-items">
-					    <ul class="pure-menu-list ">
-					       	<div class="l-box login" id="login">
-					       		<img src="<%=topics.image%>" id="profile-image"></a>   
-					       	</div>
-					       	<div class="l-box" id="facename">
-					       		Welcome, <%= topics.facename %>
-					       	</div>
-					       	<a href="/logout"><img src="/img/logout.png" id="logout"></a>
-					       <li>
-					       	<div class="l-box">
-
-					       </li>
+					    <ul class="pure-menu-list">
+					    	<div class="navbar-box">
+						    	 <li class="navbar-icons">
+						       		<img src="<%=topics.image%>" id="profile-image"></a>   
+						       </li>
+						       <li id="profile-facename">
+						       		Welcome, <%= topics.facename %>
+						   
+						       </li>
+						       <li class="navbar-icons">
+						       	<a href="/logout"><img src="/img/logout.png" id="logout"></a>
+						       </li>
+					    	</div>
 					    </ul>
 					</div>
 				</div>

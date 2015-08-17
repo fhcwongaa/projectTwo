@@ -22,19 +22,17 @@
 				<div class="pure-menu pure-menu-horizontal" >
 					<div class= "navbar-items">
 					    <ul class="pure-menu-list ">
-					    	 <li class="pure-menu-item">
-					    	 	<div class="l-box">
-					    	 		<img src="<%=topics.image%>" id="profile-image" class="login"></a>  
-					    	 		
-					    	 		<img src="/img/writeIcon.png" id="write">
-
-					    	 		<a href="/logout"><img src="/img/logout.png" id="logout" class="login"></a>
-					    	 	</div>
-					    	 </li>
-					       <li class="pure-menu-item">
-					       	<div class="l-box">
-					       	</div>
-					       </li>
+					    	 <div class="navbar-box">
+						    	 <li class="navbar-icons">
+						       		<img src="<%=topics.image%>" id="profile-image"></a>   
+						       </li>
+						       <li id="profile-facename">
+						       		<a href="/app/topics/<%=topics[0].topic_id%>/new"><img src="/img/writeIcon.png" id="write"></a>
+						       </li>
+						       <li class="navbar-icons">
+						       	<a href="/logout"><img src="/img/logout.png" id="logout"></a>
+						       </li>
+					    	</div>
 					    </ul>
 					</div>
 				</div>

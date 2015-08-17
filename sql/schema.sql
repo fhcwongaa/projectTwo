@@ -48,9 +48,9 @@ VALUES ('Alex Rodriguez Comeback',2,2,1),('Kevin Durant for MVP',55,1,1),
 
 
 
-INSERT INTO comments (content,thread_id,location)
-VALUES('no wayyyyyyyyyyyyyyyyyy waht is going on', 1,'New York, New York'),('no wayyyyyyyyyyyyyyyyyy waht is going on', 2,'New York, New York'),('testing number 2', 3,'New York, New York'),('waht is going on', 4,'New York, New York')
-,('waht is going on', 5,'New York, New York'),('waht is going on', 6,'New York, New York');
+INSERT INTO comments (content,thread_id,location,user_id)
+VALUES('no wayyyyyyyyyyyyyyyyyy waht is going on', 1,'New York, New York',10155879467195627),('no wayyyyyyyyyyyyyyyyyy waht is going on', 2,'New York, New York',10155879467195627),('testing number 2', 3,'New York, New York',10155879467195627),('waht is going on', 4,'New York, New York',10155879467195627)
+,('waht is going on', 5,'New York, New York',10155879467195627),('waht is going on', 6,'New York, New York',10155879467195627);
 
 
 

@@ -100,7 +100,7 @@ html, body{
 }
 
 nav{
-	border-bottom: 2px solid #343442;
+	border-bottom: 1px solid #343442;
 	height:60px;
 	position:fixed;
 	top: 0;
@@ -123,6 +123,9 @@ nav{
  	height:35px;
  	width: 35px;
  	border-radius: 5px;
+}
+#logout:hover{
+	content: url('/img/logout_hover.png');
 }
 
 #brand{
@@ -155,19 +158,13 @@ nav{
 .navbar-logo{
 	text-align: left;
 	background-color: white;
-	
-
-
 }
 #write{
 	height:30px;
 	margin-bottom: 0px;
-	transform: skew(20deg);
- 	-webkit-transform: skew(20deg);
- 	-moz-transform: skew(20deg);
 }
 #write:hover{
-
+	content: url('/img/writeIcon_hover.png');
 }
 
 .login{
@@ -200,14 +197,21 @@ nav{
 	padding-left: 40px;
 	text-align: right;
 	color:white;
-	    transform: skew(-20deg);
-    -webkit-transform: skew(-20deg);
-    -moz-transform: skew(-20deg);
-
-
+	transform: skew(-20deg);
+   -webkit-transform: skew(-20deg);
+   -moz-transform: skew(-20deg);
+}
+.navbar-box{
+	transform: skew(20deg);
+   -webkit-transform: skew(20deg);
+   -moz-transform: skew(20deg);
+   margin-right: 20px;
+   margin-top:13px; 
+}
+#profile-facename{
+	padding-bottom: 30px;
 }
 nav li{
-
 	font-size: 18px;
 	display: inline;
 	padding-top: 5px;
@@ -409,7 +413,7 @@ a:hover{
 }
 
 .testuser{
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 15px;
 	color: #343442;
 	width: 100px;
@@ -474,6 +478,7 @@ textarea{
 	width:150px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	border-radius: 75px;
 }
 
 .post-comments{

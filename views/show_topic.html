@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 
@@ -23,21 +24,17 @@
 				<div class="pure-menu pure-menu-horizontal" >
 					<div class= "navbar-items">
 					    <ul class="pure-menu-list ">
-					    	 <li class="pure-menu-item">
-					    	 	<div class="l-box">
-					    	 		
-					    	 		<img src="<%=topics.image%>" id="profile-image" class="login"> 
-
-					    	 		<a href="/app/topics/<%=topics[0].topic_id%>/new"><img src="/img/writeIcon.png" id="write"></a>
-					    	 		<a href="/logout"><img src="/img/logout.png" id="logout" class="login"></a>
-
-					    	 	</div>
-					    	 </li>
-					       
-					       <li class="pure-menu-item">
-					       	<div class="l-box">
-					       	</div>
-					       </li>
+					    	 <div class="navbar-box">
+						    	 <li class="navbar-icons">
+						       		<img src="<%=topics.image%>" id="profile-image"></a>   
+						       </li>
+						       <li id="profile-facename">
+						       		<a href="/app/topics/<%=topics[0].topic_id%>/new"><img src="/img/writeIcon.png" id="write"></a>
+						       </li>
+						       <li class="navbar-icons">
+						       	<a href="/logout"><img src="/img/logout.png" id="logout"></a>
+						       </li>
+					    	</div>
 					    </ul>
 					</div>
 				</div>
@@ -54,12 +51,12 @@
 				<!-- Top threads -->
 				<div class = "pure-u-1">
 					<div class="show-top">
-						Thread: <%=topics[0].name%>
+						Thread: <%=topics[0].threadsname%>
 					</div>
 				</div>
 				<!-- Top threads -->
 				<div class = "pure-u-1">
-					<div class="show-created">
+					<div class="show-created" id="load-created">
 						<div class = "pure-u-6-24">Created By:</div>
 						<div class= "pure-u-1-24"> <img src="/img/icon.png" class="icons" id="icon-picture"> </div>
 						<div class= "pure-u-5-24"> <div class = "username" id="post-username"> TestUser123 </div> </div>
@@ -67,7 +64,7 @@
 							<form method="POST" action="/app/topics/<%=topics[0].topic_id%>/threads/<%=topics[0].thread_id%>?_method=PUT">
 								<div class = "submit-button">
 								
-								<input type="image" name="submit"src="/img/thumbs.png" class="icons thumbs">
+								<input type="image" name="submit"src="/img/thumbs.png" class="icons thumbs" id="upvote">
 								<input type="hidden" name="vote" value="<%=topics[0].votes%>">
 								
 								</div>
@@ -102,7 +99,6 @@
 					</div>
 				</div>
 
-
 			<% topics.forEach(function(elem){ %>
 									<!-- Table -->
 					<table class = "post-table">
@@ -118,9 +114,9 @@
 					    <tbody>
 					        <tr>
 					            <td style="text-align:center; height: 300px;">
-					            	<div class="pure-u-1" style="text-align: center;">User1234</div>
+					            	<div class="pure-u-1" style="text-align: center;"><%=elem.name%></div>
 					            	<div class="pure-u-1">
-					            		<img src="/img/icon.png" class="table-icons">
+					            		<img src="<%=elem.image%>" class="table-icons">
 					            	</div>
 					            	<div class="pure-u-1"><img src="/img/location.png" id="tw"> <%=elem.location%></div>
 					            </td>
@@ -137,8 +133,6 @@
 
 			<% }) %>
 
-
-			
 
 				</div>
 			</div>
