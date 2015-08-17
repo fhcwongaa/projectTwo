@@ -7,9 +7,9 @@ Spora is a sports forum that allows users to create threads to discuss about dif
 3.User can login and create a new thread by adding a thread title and a comments
 4.User can also view existing threads and comment on the existing thread
 ## Wireframes/Mockups
-![Mockup1](../../Mockups/mockup1.png)
-![Mockup1](../../Mockups/mockup2.png)
-![Mockup1](../../Mockups/mockup3.png)
+![Mockup1](./resources/mockup1.png)
+![Mockup1](./resources/mockup2.png)
+![Mockup1](./resources/mockup3.png)
 
 ## Routes
 Routes:
@@ -26,7 +26,7 @@ Routes:
 ##Pseudocode
 
 ## Database Design
-![Mockup1](../../ERD/forum_ERD.png)
+![Mockup1](./resources/forum_ERD.png)
 ## Credits
 TODO: Write credits
 ## License
