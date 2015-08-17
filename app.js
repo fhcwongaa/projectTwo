@@ -46,7 +46,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
     clientID: process.env.fbkey,
     clientSecret: process.env.secretkey2,
-    callbackURL: 'http://localhost:3000/auth/facebook/callback'
+    callbackURL: 'http://104.131.35.143:3000/auth/facebook/callback'
   },
     function(accessToken, refreshToken, profile, done){
       // asynchronous verification, for effect...
