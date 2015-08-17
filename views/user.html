@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SPORA</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/animate.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+
+	<!-- FACEBOOK LOGIN -->
+
+	<!-- Navigation Bar -->
+	<nav>
+		<div class = "pure-g">
+			<div class="pure-u-lg-3-24  pure-u-md-8-24 pure-u-sm-1 pure-u-1" style="background-color: white;">
+				<div class= "navbar-logo">
+					<a href="/app/profile"><img  src="/img/SPORA.png" id="brand"></a>
+				</div>
+			</div>
+			<div class="pure-u-lg-21-24 pure-u-md-16-24 pure-u-sm-1 pure-u-1">
+				<div class="pure-menu pure-menu-horizontal" >
+					<div class= "navbar-items">
+					    <ul class="pure-menu-list ">
+					       	<div class="l-box login" id="login">
+					       	<img src="<%=topics.image%>" id="profile-image"></a>  Welcome, <%= topics.facename %> 
+					       	<a href="/logout"><img src="/img/logout.png" id="logout"></a>
+					       	</div>
+
+					       <li>
+					       	<div class="l-box">
+
+					       </li>
+					    </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- Content -->
+	<div class = "pure-g">
+		
+		<div class="pure-u-17-24 background">
+			<div class = "wrapper-content">
+				<!-- Top threads -->
+				<div class = "pure-u-1">
+					<div class="wrapper-top">
+					Top Threads <img src="/img/top.png" class="ball">
+					</div>
+				</div>
+				<!-- Table -->
+				<table>
+				    <thead class = "wrapper-table pure-table pure-table-horizontal">
+				        <tr>
+				            <th>Threads</th>
+				            <th>Date Created</th>
+				            <th>Popularity</th>
+				            <th>Posts</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				    	<!-- Display Top 3 -->
+
+				   <%for(var i=0;i<3;i++){%>
+				    	  <tr>
+				            <td><a href="/app/topics/<%=topics[i].topic_id%>/threads/<%=topics[i].id%>" class="threads"><%=topics[i].name%></a></td>
+				            <td><%=topics[i].sqltime%></td>
+				            <td><img src="/img/thumbs.png" id="tw"><%=topics[i].votes%></td>
+				            <td><img src="/img/chat.png" id="tw"><%=topics[i].comments%></td>
+
+				        </tr>
+				   <% } %>
+
+
+    				</tbody>
+				</table>
+
+
+				<!-- Basketball  -->
+
+				<!-- Top threads -->
+				<div class = "pure-u-1">
+					<div class="wrapper-top">
+					<a href="/app/topics/1">Basketball <img src="/img/basketball.png" class="ball" id="basketball"></a>
+					</div>
+				</div>
+				<!-- Table -->
+				<table>
+				    <thead class = "wrapper-table pure-table pure-table-horizontal">
+				        <tr>
+				            <th>Threads</th>
+				            <th>Date Created</th>
+				            <th>Rating</th>
+				            <th>Posts</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+
+				    	 <%var count = 0; %>
+				       <%for(var i=0;i<topics.length;i++){%>
+				       	<%if(topics[i].topic_name === 'Basketball' && count < 3){%>
+						    	  <tr>
+						            <td><a href="/app/topics/<%=topics[i].topic_id%>/threads/<%=topics[i].id%>" class="threads"><%=topics[i].name%></a></td>
+						             <td><%=topics[i].sqltime%></td>
+						            <td><img src="/img/thumbs.png" id="tw"><%=topics[i].votes%></td>
+						            <td><img src="/img/chat.png" id="tw"><%=topics[i].comments%></td>
+
+						        </tr>
+						        <%count++%>
+						     <%}%>
+				   	 <% } %>
+    				</tbody>
+				</table>
+
+				<!-- Soccer  -->
+			<!-- Top threads -->
+				<div class = "pure-u-1">
+					<div class="wrapper-top">
+					<a href="/app/topics/2">Baseball <img src="/img/baseball.png" class="ball"></a>
+					</div>
+				</div>
+				<!-- Table -->
+				<table>
+				    <thead class = "wrapper-table pure-table pure-table-horizontal">
+				        <tr>
+				            <th>Threads</th>
+				            <th>Date Created</th>
+				            <th>Rating</th>
+				            <th>Posts</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				    	 <%var count = 0; %>
+				       <%for(var i=0;i<topics.length;i++){%>
+				       	<%if(topics[i].topic_name === 'Baseball' && count < 3){%>
+						    	  <tr>
+						            <td><a href="/app/topics/<%=topics[i].topic_id%>/threads/<%=topics[i].id%>" class="threads"><%=topics[i].name%></a></td>
+						             <td><%=topics[i].sqltime%></td>
+						            <td><img src="/img/thumbs.png" id="tw"><%=topics[i].votes%></td>
+						            <td><img src="/img/chat.png" id="tw"><%=topics[i].comments%></td>
+
+						        </tr>
+						        <%count++%>
+						     <%}%>
+				   	 <% } %>
+    				</tbody>
+				</table>
+
+				<!-- Soccer -->
+
+				<!-- Top threads -->
+				<div class = "pure-u-1">
+					<div class="wrapper-top">
+					<a href="/app/topics/3">Soccer <img src="/img/soccer.png" class="ball"></a>
+					</div>
+				</div>
+				<!-- Table -->
+				<table>
+
+				    <thead class = "wrapper-table pure-table pure-table-horizontal">
+				        <tr>
+				            <th>Threads</th>
+				            <th>Date Created</th>
+				            <th>Rating</th>
+				            <th>Posts</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				    	<%var count = 0; %>
+				      <%for(var i=0;i<topics.length;i++){%>
+				       	<%if(topics[i].topic_name === 'Soccer' && count < 3){%>
+						    	  <tr>
+						            <td><a href="/app/topics/<%=topics[i].topic_id%>/threads/<%=topics[i].id%>" class="threads"><%=topics[i].name%></a></td>
+						             <td><%=topics[i].sqltime%></td>
+						            <td><img src="/img/thumbs.png" id="tw"><%=topics[i].votes%></td>
+						            <td><img src="/img/chat.png" id="tw"><%=topics[i].comments%></td>
+
+						        </tr>
+						        <%count++%>
+						     <%}%>
+				   	 <% } %>
+    				</tbody>
+				</table>
+
+
+
+				</div>
+			</div>
+
+
+
+
+			<!-- ESPN  API  -->
+			<div class="pure-u-7-24 background">
+				<div class = "espn-content">
+					<div class = "pure-u-1">
+						<div class="espn-top">
+						Sport Tweets
+						<img src="https://g.twimg.com/Twitter_logo_blue.png" id="tw">
+						</div>
+						<div class = "pure-u-1">
+							<div class="espn-caption">
+								powered by Twitter
+							</div>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Peep some of the best game-rituals around the NBA!&#10;<a href="https://t.co/pnBjO8E9hP">https://t.co/pnBjO8E9hP</a></p>&mdash; NBA (@NBA) <a href="https://twitter.com/NBA/status/632409090220761088">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Cut it out, you two.&#10;<a href="https://t.co/AdyiVvWQE0">https://t.co/AdyiVvWQE0</a></p>&mdash; MLB (@MLB) <a href="https://twitter.com/MLB/status/632569947453952002">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">FULL-TIME West Ham 1-2 Leicester. Goals from Okazaki &amp; Mahrez send <a href="https://twitter.com/LCFC">@LCFC</a> back to the top of the <a href="https://twitter.com/hashtag/BPL?src=hash">#BPL</a> table <a href="https://twitter.com/hashtag/WHULEI?src=hash">#WHULEI</a> <a href="http://t.co/xTJPoi5mOZ">pic.twitter.com/xTJPoi5mOZ</a></p>&mdash; Premier League (@premierleague) <a href="https://twitter.com/premierleague/status/632581265363963904">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+					</div>
+					
+				</div>
+			</div>
+		
+	</div>
+		<script src="/main.js"></script>
+
+</body>
+</html>

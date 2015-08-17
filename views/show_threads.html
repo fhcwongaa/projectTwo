@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SPORA</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class = "pure-g">
+			<div class="pure-u-lg-3-24  pure-u-md-8-24 pure-u-sm-1 pure-u-1" style="background-color: white;">
+				<div class= "navbar-logo">
+					<a href="/app/profile"><img  src="/img/SPORA.png" id="brand"></a>
+				</div>
+			</div>
+			<div class="pure-u-lg-21-24 pure-u-md-16-24 pure-u-sm-1 pure-u-1">
+				<div class="pure-menu pure-menu-horizontal" >
+					<div class= "navbar-items">
+					    <ul class="pure-menu-list ">
+					    	 <li class="pure-menu-item">
+					    	 	<div class="l-box">
+					    	 		<img src="<%=topics.image%>" id="profile-image" class="login"> 
+					    	 		<a href="/app/topics/<%=topics[0].topic_id%>/new"><img src="/img/writeIcon.png" id="write"></a>
+					    	 		<a href="/logout"><img src="/img/logout.png" id="logout" class="login"></a>
+					    	 	</div>
+					    	 </li>
+					       
+					       <li class="pure-menu-item">
+					       	<div class="l-box">
+					       	</div>
+					       </li>
+					    </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Content -->
+	<div class = "pure-g">
+		<div class="pure-u-17-24">
+			<div class = "wrapper-content">
+				<!-- Top threads -->
+				<div class = "pure-u-1">
+					<div class="wrapper-top">
+					<%=topics[0].topic_name%> 
+					</div>
+				</div>
+				<!-- Table -->
+				<table>
+				    <thead class = "wrapper-table pure-table pure-table-horizontal">
+				        <tr>
+				            <th>Threads</th>
+				            <th>Popularity</th>
+				            <th>Popularity</th>
+				            <th>Posts</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				    	<!-- Display Top 3 -->
+
+				   <%for(var i=0;i<topics.length;i++){%>
+				    	  <tr>
+				            <td><a href="/app/topics/<%=topics[i].topic_id%>/threads/<%=topics[i].id%>" class="threads"><%=topics[i].name%></a></td>
+				            <td><%=topics[i].sqltime%></td>
+				            <td><img src="/img/thumbs.png" id="tw"><%=topics[i].votes%></td>
+				            <td><img src="/img/chat.png" id="tw"><%=topics[i].comments%></td>
+
+				        </tr>
+				   <% } %>
+
+
+    				</tbody>
+				</table>
+
+				</div>
+			</div>
+
+
+
+
+						<!-- ESPN  API  -->
+			<div class="pure-u-7-24">
+				<div class = "espn-content">
+					<div class = "pure-u-1">
+						<div class="espn-top">
+						Sport Tweets <img src="https://g.twimg.com/Twitter_logo_blue.png" id="tw">
+						</div>
+					<div class = "pure-u-1">
+							<div class="espn-caption">
+								powered by Twitter
+							</div>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Peep some of the best game-rituals around the NBA!&#10;<a href="https://t.co/pnBjO8E9hP">https://t.co/pnBjO8E9hP</a></p>&mdash; NBA (@NBA) <a href="https://twitter.com/NBA/status/632409090220761088">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Cut it out, you two.&#10;<a href="https://t.co/AdyiVvWQE0">https://t.co/AdyiVvWQE0</a></p>&mdash; MLB (@MLB) <a href="https://twitter.com/MLB/status/632569947453952002">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="tweets">
+						<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">FULL-TIME West Ham 1-2 Leicester. Goals from Okazaki &amp; Mahrez send <a href="https://twitter.com/LCFC">@LCFC</a> back to the top of the <a href="https://twitter.com/hashtag/BPL?src=hash">#BPL</a> table <a href="https://twitter.com/hashtag/WHULEI?src=hash">#WHULEI</a> <a href="http://t.co/xTJPoi5mOZ">pic.twitter.com/xTJPoi5mOZ</a></p>&mdash; Premier League (@premierleague) <a href="https://twitter.com/premierleague/status/632581265363963904">August 15, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+					</div>
+					
+				</div>
+			</div>
+		
+		
+
+</body>
+</html>

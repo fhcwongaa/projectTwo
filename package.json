@@ -1,0 +1,29 @@
+{
+  "name": "projectwo",
+  "version": "1.0.0",
+  "description": "Spora is a sports forum that allows users to create threads to discuss about different sports(basektball, soccer, baseball).Users can post comments on certain threads as well as vote on. ## User Specifications/Stories 1.User goes to Home Page 2.User sees list of threads categorized by topics 3.User can login and create a new thread by adding a thread title and a comments 4.User can also view existing threads and comment on the existing thread ## Wireframes/Mockups ![Mockup1](../../Mockups/mockup1.png) ![Mockup1](../../Mockups/mockup2.png) ![Mockup1](../../Mockups/mockup3.png)",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^1.2.0",
+    "cookie-parser": "^1.3.5",
+    "ejs": "^2.3.3",
+    "everyauth": "^0.4.9",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "morgan": "^1.6.1",
+    "method-override": "^2.3.5",
+    "passport-facebook": "^2.0.0",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.60.0",
+    "sqlite3": "^3.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,526 @@
+@font-face{
+
+    font-family: 'SF-Compact-Display';
+    src: url("/Fonts/SF-Compact-Display-Light.otf") format("opentype");
+}
+
+
+@font-face{
+	 font-family: 'SF-Compact-Display-Bold';
+    src: url("/Fonts/SF-Compact-Display-Bold.otf") format("opentype");
+}
+
+/***********************************MODAL***********************************/
+#modal{
+	position:fixed;
+	top:0;
+	left:0;
+	display:none;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.75);
+	text-align:center;
+}
+.modal-content{
+	text-align:center;
+	position: relative;
+	margin: 0 30%;
+	background-color: white;
+	top:100px;
+	width:30%;
+	border-radius: 25px;
+	border: solid rgba(0,0,0,0.8) 6px;
+	color:white;
+	height:300px;
+	font-size: 15px;
+	text-align: left;
+}
+
+
+.modal-header{
+	position: absolute;
+	width:100%;
+	border-radius: 25px;
+	text-align: center;
+	height:20%;
+	margin-top: 20px
+
+}
+
+.modal-body{
+	position: absolute;
+	width: 100%;
+	top:20px;
+	border-radius: 25px;
+	text-align: left;
+	margin: 30px;
+	width:100%;
+
+
+
+}
+.modal-close{
+	color:black;
+	text-align: right;
+	font-size: 30px;
+	font-family: 'SF-Compact-Display';
+	padding-right: 20px;
+	margin-top: 0px;
+}
+
+.modal-facebook{
+	margin-top: 20px;
+	text-align: center;
+	padding-right: 70px;
+	margin-top: 50px;
+}
+.modal-gmail{
+
+	text-align: center;
+	padding-right: 70px;
+}
+.modal-login{
+	color: #343442;
+	font-family: 'SF-Compact-Display';
+	text-align: center;
+	padding-right: 45px;
+	font-size: 25px;
+}
+
+
+
+
+/*********************************navbar*******************************/
+
+html, body{
+    margin:0px;
+    padding:0px;
+    background-color: #EEEEEE;
+    
+}
+
+nav{
+	border-bottom: 2px solid #343442;
+	height:60px;
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+
+}
+
+#profile-image{
+ 	margin-right: 20px;
+ 	height:35px;
+ 	width: 35px;
+ 	border-radius: 5px;
+}
+
+
+#logout{
+	margin-left: 20px;
+ 	height:35px;
+ 	width: 35px;
+ 	border-radius: 5px;
+}
+
+#brand{
+	padding-top: 5px;
+	height:50px;
+	padding-left: 15px;
+}
+#picture{
+	padding-top: 0px;
+	height:50px;
+	padding-left: 20px;
+	border-radius: 10px 10px 10px 10px;
+	margin-bottom: 20px;
+}
+
+
+
+#facebook{
+	padding-top: 5px;
+	height:50px;
+	padding-left: 20px;
+
+
+}
+
+.wrapper{
+	padding-top: 50px;
+
+}
+.navbar-logo{
+	text-align: left;
+	background-color: white;
+	
+
+
+}
+#write{
+	height:30px;
+	margin-bottom: 0px;
+	transform: skew(20deg);
+ 	-webkit-transform: skew(20deg);
+ 	-moz-transform: skew(20deg);
+}
+#write:hover{
+
+}
+
+.login{
+	margin-top: 5px;
+	font-size: 20px;
+	color: white;
+	margin-right: 10px;
+	font-family: 'SF-Compact-Display';
+	transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+}
+#login a{
+	color:white;
+}
+
+#login{
+	margin-top: 5px;
+	font-size: 20px;
+	color: white;
+	margin-right: 10px;
+	font-family: 'SF-Compact-Display';
+	transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+}
+.navbar-items{
+	background-color: #343442;
+	height: 60px;
+	padding-left: 40px;
+	text-align: right;
+	color:white;
+	    transform: skew(-20deg);
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+
+
+}
+nav li{
+
+	font-size: 18px;
+	display: inline;
+	padding-top: 5px;
+	font-family: 'SF-Compact-Display';
+	
+}
+
+.l-box {
+      padding: 15px 10px;
+ }
+
+
+/*********************************Content - index.html *******************************/
+.background{
+	background-color: #EEEEEE;
+}
+
+
+.wrapper-content{
+	margin-top: 90px;
+	border:1px solid #B2B2B2;
+	margin-left:30px;
+	background-color: white;
+
+}
+.wrapper-top{
+	padding-top: 30px;
+	font-size: 38px;
+	font-family: 'SF-Compact-Display';
+	margin-left: 60px;
+	color: #343442 ;
+}
+.wrapper-table{
+	background-color: #343442;
+	height: 50px;
+	color:white;
+	font-family: 'SF-Compact-Display';
+
+}
+
+
+.column-head{
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+.ball{
+
+	height:35px;
+	width: 35px;
+	padding-left: 3px;
+}
+
+
+thead{
+	background-color: #343442;
+}
+table, th, td {
+    border-left: none;
+    border-right:none;
+}
+
+table {
+	margin-top: 20px;
+	margin-left: 50px;
+   width: 90%;
+   margin-bottom: 80px;
+}
+
+th {
+	height: 30px;
+   text-align: left;
+   font-size: 40px;
+}
+td{
+	height:90px;
+	padding:20px;
+	text-align: left;
+}
+tr{
+	border-bottom: 2px solid #343442;
+}
+
+.threads{
+	color: #343442;
+	font-size: 22px;
+	text-decoration: none;
+	font-family: 'SF-Compact-Display-Bold';
+}
+
+a{
+	color: #343442;
+	text-decoration: none;
+}
+a:hover{
+	color:#6699FF;
+}
+
+/**************************************ESPN CONTENT*******************************/
+
+.espn-content{
+	margin-top: 90px;
+	margin-left: 30px;
+	margin-right: 30px;
+	border: 1px solid #B2B2B2;
+	padding-left: 30px; 
+	background-color: white;
+}
+.espn-top{
+	font-size: 30px;
+	color: #343442;
+	margin-top: 30px;
+	text-align: left;
+	padding-right: 5px;
+	font-family: 'SF-Compact-Display';
+
+}
+.espn-caption{
+	font-size: 15px;
+	color: #343442;
+	text-align: center;
+	padding-right: 10px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #343442;
+	padding-bottom: 10px;
+	font-family: 'SF-Compact-Display';
+}
+
+.tweets{
+	text-align: center;
+	margin-right: 15px;
+
+}
+
+#tw{
+	height:25px;
+	width: 25px;
+	margin-right: 10px;
+}
+
+/**************************************SHOW CONTENT*******************************/
+
+.show-content{
+	margin-top: 90px;
+	border:1px solid #B2B2B2;
+	margin-left:30px;
+	background-color: white;
+
+
+}
+.show-top{
+	font-size: 37.5px;
+	font-family: 'SF-Compact-Display-Bold';
+	margin-left: 60px;
+	color: #343442 ;
+	border-bottom: 2px solid #343442;
+	width: 90%;
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+.show-created{
+	margin-left: 70px;
+	font-size: 25px;
+	margin-top: 10px;
+	color: #343442;
+	vertical-align: bottom;
+	height: 50px;
+	width: 60%;
+}
+.show-post{
+	height: 195px;
+	border: 1px solid #B2B2B2;
+	width: 87.5%;
+	margin-left: 60px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+
+
+}
+
+#createdBy{
+	padding-bottom: 5px;
+	width: 30%;
+	margin-right: 0;
+}
+.icons{
+	height:36px;
+	width: 36px;
+	border-radius: 5px;
+
+}
+
+.show-user{
+	margin-top: 20px;
+	margin-left: 20px;
+	vertical-align: bottom;
+	width: 30%;
+}
+
+.testuser{
+	margin-top: 5px;
+	font-size: 15px;
+	color: #343442;
+	width: 100px;
+}
+.input-box{
+	margin-left: 20px;
+	margin-top:10px;
+	margin-right: 10px;
+
+}
+
+textarea{
+	width:95%;
+	border: #CCCCCC solid 1px;
+	text-align: left;
+	outline:none;
+	resize:none;
+}
+
+.votes{
+	padding-top: 5px;
+	margin-left: 35px;
+	font-size: 22px;
+}
+.username{
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 22px;
+}
+.thumbs{
+	margin-left: 30px;
+	margin-right: 0px;
+}
+
+/*Change placeholder color*/
+::-webkit-input-placeholder {
+   color: #C0C0C0 ;
+   font-family: 'SF-Compact-Display';
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #C0C0C0 ;  
+   font-family: 'SF-Compact-Display';
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #C0C0C0 ; 
+   font-family: 'SF-Compact-Display'; 
+}
+
+:-ms-input-placeholder {  
+   color: #C0C0C0 ;  
+   font-family: 'SF-Compact-Display';
+}
+
+
+/**************************************COMMENTS*******************************/
+
+.table-icons{
+	height:150px;
+	width:150px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.post-comments{
+	font-size: 20px;
+}
+
+/**************************************NEW THREAD*******************************/
+
+.new-top{
+	padding-top: 30px;
+	font-size: 38px;
+	font-family: 'SF-Compact-Display-Bold';
+	color: #343442 ;
+	text-align: center;
+}
+
+.new-post{
+	height: 330px;
+	border: 1px solid #B2B2B2;
+	width: 87.5%;
+	margin-left: 60px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+.thread-title{
+	margin: 10px 10px 10px 20px;
+	color: #343442 ;
+}
+.thread-title-input{
+	size: 255;
+	margin-left: 20px;
+	outline: none;
+
+}
+.thread-title-input select{
+	background-color: white;
+	font-family: 'SF-Compact-Display';
+
+}
+
+
+
+#submit-button{
+	background-color: #343442;
+	color: white;
+	font-family: 'SF-Compact-Display';
+	border: none;
+	font-size: 15px;
+	outline: none;
+	border-radius: 5px;
+}
