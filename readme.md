@@ -28,6 +28,13 @@ Routes:
 ## Database Design
 ![Mockup1](./resources/forum_ERD.png)
 ## Credits
-TODO: Write credits
-## License
-TODO: Write license
+Libraries:
+<p>
+Node.js, express.js, passport.js
+</p>
+Repository used: 
+<p>
+https://github.com/jaredhanson/passport-facebook
+</p>
+
+
