@@ -53,10 +53,7 @@ passport.use(new FacebookStrategy({
       console.log("hhit");
       process.nextTick(function () {
         console.log("hhit");
-       //  To keep the example simple, the user's Facebook profile is returned to
-       //  represent the logged-in user.  In a typical application, you would want
-       //  to associate the Facebook account with a user record in your database,
-       //  and return that user instead.
+
        console.log(profile.username);
        var image = "https://graph.facebook.com/" + profile.id+ "/picture" + "?width=200&height=200" + "&access_token=" + accessToken;
        console.log(image);
