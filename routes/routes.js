@@ -91,7 +91,7 @@ app.get('/app/topics/:id/threads/:idd',ensureAuthenticated,function(req,res){
 		if(err){
 			console.log(err);
 		}else{
-			db.all('SELECT comments.sqltime, comments.thread_id, comments.id,comments.content,comments.location, comments.user_id, threads.name AS threadsname, threads.votes, threads.topic_id, users.id,users.name,users.image from comments,threads,users WHERE comments.thread_id = threads.id AND users.id = comments.user_id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
+			db.all('SELECT comments.sqltime, comments.thread_id AS commentthreadID, comments.id AS commendsID,comments.content,comments.location, comments.user_id, threads.name AS threadsname, threads.votes, threads.topic_id, users.id,users.name,users.image from comments,threads,users WHERE comments.thread_id = threads.id AND users.id = comments.user_id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
 				data = rows2; 
 				data.facename = req.user.name;
 				data.image = req.user.image;
@@ -119,7 +119,7 @@ app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 		geolocation = city + ", " + region + ", " +  country;
 		console.log(geolocation);
 
-	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.id, function(err,rows){
+	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.id-1, function(err,rows){
 	 		console.log(geolocation);
 	 		if(err){
 	 			console.log(err);
