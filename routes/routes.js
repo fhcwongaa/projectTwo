@@ -118,8 +118,9 @@ app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 		country = JSON.parse(body).country;
 		geolocation = city + ", " + region + ", " +  country;
 		console.log(geolocation);
+		console.log(req.user.id);
 
-	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.id-1, function(err,rows){
+	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.id, function(err,rows){
 	 		console.log(geolocation);
 	 		if(err){
 	 			console.log(err);
