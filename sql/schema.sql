@@ -22,7 +22,8 @@ CREATE TABLE threads(
 );
 
 CREATE TABLE users(
-	id INTEGER,
+	id INTEGER PRIMARY KEY,
+	user_id INTEGER,
 	access_token varchar(255),
 	name varchar(255),
 	email varchar(255),

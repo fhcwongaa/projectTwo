@@ -525,14 +525,15 @@
 
 	}
 
-	#submit-button{
+	#submit-button-post{
 		background-color: #343442;
 		color: white;
 		font-family: 'SF-Compact-Display';
 		border: none;
 		font-size: 15px;
 		outline: none;
-		border-radius: 5px;
+		/*border-radius: 5px;*/
+
 
 	}
 

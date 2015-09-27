@@ -61,14 +61,14 @@
 						<div class= "pure-u-lg-1-24 pure-u-4-24"> <img src="/img/icon.png" class="icons" id="icon-picture"> </div>
 						<div class= "pure-u-lg-5-24 pure-u-6-24"> <div class = "username" id="post-username"> TestUser123 </div> </div>
 						<div class="pure-u-lg-2-24 pure-u-4-24">
-							<form method="POST" action="/app/topics/<%=topics[0].topic_id%>/threads/<%=topics[0].thread_id%>?_method=PUT">
+							<!-- <form method="POST" action="/app/topics/<%=topics[0].topic_id%>/threads/<%=topics[0].threadID%>?_method=PUT"> -->
 								<div class = "submit-button">
 								
 								<input type="image" name="submit"src="/img/thumbs.png" class="icons thumbs" id="upvote">
 								<input type="hidden" name="vote" value="<%=topics[0].votes%>">
 								
 								</div>
-							</form>
+							<!-- </form> -->
 						</div>
 						<div class= "pure-u-lg-4-24 pure-u-2-24"> <div class="votes"> <%=topics[0].votes%></div> </div>
 					</div>
@@ -91,8 +91,8 @@
 							<div class = "input-box">
 								<form method="POST" action="/app/topics/<%=topics[0].topic_id%>/threads">
 									<textarea rows="4" cols="50" placeholder="Write comment here" name="content"></textarea>
-									<input type="hidden" name="id" value="<%=topics[0].thread_id%>">
-									<input type="submit" id="submit-button">
+									<input type="hidden" name="id" value="<%=topics[0].threadID%>">
+									<input type="submit" id="submit-button-post">
 								</form>
 							</div>
 						</div>
@@ -107,7 +107,7 @@
 					    <thead class = "wrapper-table pure-table pure-table-horizontal">
 					        <tr>
 					            <th>Date: <%=elem.sqltime%> </th>
-					            <th style="text-align:right;"># <%=elem.id%></th>
+					            <th style="text-align:right;"># <%=elem.commentsID%></th>
 					        
 					        </tr>
 					    </thead>

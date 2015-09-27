@@ -91,11 +91,13 @@ app.get('/app/topics/:id/threads/:idd',ensureAuthenticated,function(req,res){
 		if(err){
 			console.log(err);
 		}else{
-			db.all('SELECT comments.sqltime, comments.thread_id AS commentthreadID, comments.id AS commendsID,comments.content,comments.location, comments.user_id, threads.name AS threadsname, threads.votes, threads.topic_id, users.id,users.name,users.image from comments,threads,users WHERE comments.thread_id = threads.id AND users.id = comments.user_id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
+			//get time, comment thread id
+			db.all('SELECT comments.sqltime, comments.thread_id AS threadID, comments.id AS commentsID,comments.content,comments.location, comments.user_id, threads.name AS threadsname, threads.votes, threads.topic_id, users.user_id,users.name,users.image from comments,threads,users WHERE comments.thread_id = threads.id AND users.user_id = comments.user_id AND comments.thread_id = ?', parseInt(rows.id), function(err,rows2){
 				data = rows2; 
 				data.facename = req.user.name;
 				data.image = req.user.image;
 				console.log(rows2);
+				console.log(rows);
 				var rendered = ejs.render(template,{topics: data});
 				res.send(rendered);
 			})
@@ -107,6 +109,7 @@ app.get('/app/topics/:id/threads/:idd',ensureAuthenticated,function(req,res){
 //POST comments
 app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 	var geolocation; 
+	console.log("****************************POST COMMENT*******************")
 	//make api call for geolocation
 	request.get('http://ipinfo.io/json',function(err,response,body){
 		console.log(body);
@@ -118,9 +121,10 @@ app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 		country = JSON.parse(body).country;
 		geolocation = city + ", " + region + ", " +  country;
 		console.log(geolocation);
-		console.log(req.user.id);
+		console.log(req.user.user_id);
+		console.log(req.body.id);
 
-	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.id, function(err,rows){
+	db.run("INSERT INTO comments (content,thread_id,location,user_id) VALUES (?,?,?,?)", req.body.content, parseInt(req.body.id), geolocation, req.user.user_id, function(err,rows){
 	 		console.log(geolocation);
 	 		if(err){
 	 			console.log(err);
@@ -144,8 +148,8 @@ app.post('/app/topics/:id/threads',ensureAuthenticated,function(req,res){
 
 			}
 		});
+		res.redirect('/app/topics/' + req.params.id + '/threads/' + req.body.id);
 	});
-		res.redirect('/app/topics/' + req.params.id + '/threads/'+ req.body.id);
 });
 
 
@@ -174,6 +178,7 @@ app.get('/app/topics/:id/new',ensureAuthenticated,function(req,res){
 		if(err){
 			console.log(err);
 		}else{
+			console.log(rows);
 			data = rows; 
 			data.facename = req.user.name;
 			data.image = req.user.image;
@@ -196,7 +201,7 @@ app.post('/app/topics', ensureAuthenticated, function(req,res){
 	 				console.log("INSERTED thread");
 	 				console.log(threadID);
 	 				//insert comment
-				 			db.run("INSERT INTO comments (content,thread_id) VALUES (?,?)", req.body.content,threadID , function(err,rows){
+				 			db.run("INSERT INTO comments (content,thread_id,user_id) VALUES (?,?,?)", req.body.content,threadID ,req.user.user_id, function(err,rows){
 					 		if(err){
 					 			console.log(err);
 					 		}else{
@@ -212,6 +217,9 @@ app.post('/app/topics', ensureAuthenticated, function(req,res){
 	
 		res.redirect('/app/topics/' + req.body.topic_id);
 });
+
+
+
 //FACEBOOK ROUTES
 app.get('/logout', function(req, res){
   req.logout();

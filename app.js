@@ -24,14 +24,15 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 
   //sessions serializing
   passport.serializeUser(function(user, done){
-  	console.log(user);
-    done(null, user.id);
+  	console.log("*****************");
+  	console.log(user.user_id);
+    done(null, user.user_id);
 
   });
 
   passport.deserializeUser(function(id, done){
   	console.log("deserializeUser" + id);
-    db.get('SELECT id, access_Token, name, image FROM users WHERE id = ?',id,function(err,row){
+    db.get('SELECT user_id, access_Token, name, image FROM users WHERE user_id = ?',id,function(err,row){
     	console.log("row");
       if(!row) return done(null,false);
       console.log(row);
@@ -58,7 +59,7 @@ passport.use(new FacebookStrategy({
        var image = "https://graph.facebook.com/" + profile.id+ "/picture" + "?width=200&height=200" + "&access_token=" + accessToken;
        console.log(image);
         // get the user
-		     db.get('SELECT id, access_Token, name, image FROM users WHERE id =?', profile.id, function(err, row) {
+		     db.get('SELECT user_id, access_Token, name, image FROM users WHERE user_id =?', profile.id, function(err, row) {
 		     		console.log(row);
 		          if (err){
 		            //if user does not exist
@@ -68,15 +69,16 @@ passport.use(new FacebookStrategy({
 		          if(row){
 		            //if user is already in the database
 		             console.log("hit2");
+		             console.log(row);
 		            return done(null, row);
 		          }else{
 		            //if user is not in the database, store user
 		             console.log("hit3");
-		            db.run('INSERT INTO users (id, access_token, name,image) VALUES (?,?,?,?)', profile.id,accessToken,profile.displayName,image, function(err,row){
+		            db.run('INSERT INTO users (user_id, access_token, name,image) VALUES (?,?,?,?)', profile.id,accessToken,profile.displayName,image, function(err,row){
 		              if(err){
 		                console.log(err);
 		              }else{
-		                db.get('SELECT id, access_token, name,image FROM users WHERE id =?',profile.id,function(err,row2){
+		                db.get('SELECT user_id, access_token, name,image FROM users WHERE user_id =?',profile.id,function(err,row2){
 		                  return done(null,row2);
 		                });
 		              }
